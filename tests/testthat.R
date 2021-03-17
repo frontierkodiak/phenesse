@@ -1,4 +1,6 @@
 library(testthat)
-library(phenesse)
+#library(phenesse)
+library(devtools)
+install_github("frontierkodiak/phenesseExperimental")
 
-test_check("phenesse")
+test_check("phenesseExperimental")
