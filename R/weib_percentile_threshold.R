@@ -50,6 +50,8 @@ weib_percentile_threshold <- function(observations, percentile, iterations = 500
   # print warning if trying to estimate at a true bound, because Weibull
   # distribution cannot estimate 0th or 100th percentile
 
+  observations <- t((as.vector(observations)))
+
   if(percentile == 0 | percentile == 1){
     print("Weibull distribution cannot estimate value 0th or 1st quantile")
     print("please choose a percentile value between 0 and 1")
