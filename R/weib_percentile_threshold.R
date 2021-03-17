@@ -6,7 +6,7 @@
 #' of the Weibull distribution, given random variables.
 #'
 #' @param observations is a vector of dates/time of observations
-#' given as integers
+#' given as integers. should be row vector *caleb  I need to fix this. Program in check of vector length for either row OR column vectors
 #'
 #' @param percentile is the percentile of the cumulative distribution function
 #' of interest
@@ -54,7 +54,7 @@ weib_percentile_threshold <- function(observations, percentile, iterations = 500
     print("Weibull distribution cannot estimate value 0th or 1st quantile")
     print("please choose a percentile value between 0 and 1")
   }
-  else if (lengths(observations) < min_observations){
+  else if (length(observations) < min_observations){
 
     NA
 
