@@ -2,7 +2,7 @@
 #' incidental observations.
 #'
 #' @description
-#' \code{weib_percentile} uses empirical bootstrapping to estimate a percentile
+#' \code{weib_percentile_threshold} uses empirical bootstrapping to estimate a percentile
 #' of the Weibull distribution, given random variables.
 #'
 #' @param observations is a vector of dates/time of observations
