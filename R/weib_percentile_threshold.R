@@ -54,7 +54,7 @@ weib_percentile_threshold <- function(observations, percentile, iterations = 500
     print("Weibull distribution cannot estimate value 0th or 1st quantile")
     print("please choose a percentile value between 0 and 1")
   }
-  else if (length(observations) < min_observations){
+  else if (lengths(observations) < min_observations){
 
     NA
 

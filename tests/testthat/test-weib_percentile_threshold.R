@@ -9,3 +9,10 @@ test_that("weib_percentile calculates a value that seems probable",{
 
 })
 
+test_that("weib_percentile can handle missing value",{
+
+  x <- c()
+  expect_equal(weib_percentile_threshold(x, percentile = 0.5, iterations = 20),
+               NA)
+
+})
