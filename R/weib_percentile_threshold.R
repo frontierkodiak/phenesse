@@ -56,7 +56,7 @@ weib_percentile_threshold <- function(observations, percentile, iterations = 500
   }
   else if (length(observations) < min_observations){
 
-    return(NA)
+    NA
 
   }
 
