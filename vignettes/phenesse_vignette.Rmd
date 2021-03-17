@@ -68,11 +68,11 @@ weib_percentile(observations = s_cybele$doy, percentile = 0.5)
 Estimate the beginning of when Speyeria cybele were observed in 2019 and calculate CI
 
 ```{r Speyeria_cybele_CIestimates}
-s_cybele <- subset(inat_examples, scientific_name == "Speyeria cybele")
+# s_cybele <- subset(inat_examples, scientific_name == "Speyeria cybele")
 
 # calculate onset, we're using very low iterations and bootstraps to knit vignette quickly. Please increase both iterations and bootstraps if using for analyses
-weib_percentile_ci(observations = s_cybele$doy, iterations = 10,
- percentile = 0.01, bootstraps = 100)
+#weib_percentile_ci(observations = s_cybele$doy, iterations = 10,
+# percentile = 0.01, bootstraps = 100)
 # note warning that extreme order statistics used as endpoints. Increase number of bootstraps to avoid this warning.
 
 ```
@@ -99,18 +99,18 @@ Another option I have found useful when running many confidence interval calcula
 Estimate the 10% and 50% phenometrics and confidence intervals for a quantile estimate of Rudbeckia hirta.
 
 ```{r quantile_CIestimates}
-r_hirta <- subset(inat_examples, scientific_name == "Rudbeckia hirta")
-
-# calculate 50% quantile and CIs
-quantile_ci(observations = r_hirta$doy, percentile = 0.5)
+# r_hirta <- subset(inat_examples, scientific_name == "Rudbeckia hirta")
+# 
+# # calculate 50% quantile and CIs
+# quantile_ci(observations = r_hirta$doy, percentile = 0.5)
 ```
 
 Calculate the mean estimate and confidence intervals of the estimate of Rudbeckia hirta.
 
 ```{r mean_CIestimates}
-r_hirta <- subset(inat_examples, scientific_name == "Rudbeckia hirta")
-
-# calculate mean and CIs
-mean_ci(observations = r_hirta$doy)
+# r_hirta <- subset(inat_examples, scientific_name == "Rudbeckia hirta")
+# 
+# # calculate mean and CIs
+# mean_ci(observations = r_hirta$doy)
 ```
 
