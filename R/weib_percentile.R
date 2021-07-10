@@ -43,13 +43,12 @@
 #' }
 #'
 
-#install_github('frontierkodiak/fitdistrplus-experimental')
 
 weib_percentile <- function(observations, percentile, iterations = 500){
 
   # print warning if trying to estimate at a true bound, because Weibull
   # distribution cannot estimate 0th or 100th percentile
-
+  devtools::install_github('frontierkodiak/fitdistrplusExperimental')
   if(percentile == 0 | percentile == 1){
     print("Weibull distribution cannot estimate value 0th or 1st quantile")
     print("please choose a percentile value between 0 and 1")
@@ -98,7 +97,8 @@ weib_percentile <- function(observations, percentile, iterations = 500){
       # previous create_cdf_ends()
       # weib <- fitdistrplus::fitdist(observations, distr = "weibull",
       #                               method = "mle")
-      weib <- fitdistrplus::fitdist(data = observations, distr = "weibull", method = "mle")
+      # weib <- fitdistrplus::fitdist(data = observations, distr = "weibull", method = "mle") for DEBUG
+      weib <- fitdistrplusExperimental::fitdist(data = observations, distr = "weibull", method = "mle")
       cdf0 <- as.numeric(weib$estimate['scale']*
                            (-log(1-0.01))^(1/weib$estimate['shape']))
       cdf100 <- as.numeric(weib$estimate['scale']*
