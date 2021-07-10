@@ -42,6 +42,9 @@
 #' weib_percentile(a_syriaca$doy, percentile = 0.9, iterations = 100)
 #' }
 #'
+
+#install_github('frontierkodiak/fitdistrplus-experimental')
+
 weib_percentile <- function(observations, percentile, iterations = 500){
 
   # print warning if trying to estimate at a true bound, because Weibull
@@ -95,7 +98,7 @@ weib_percentile <- function(observations, percentile, iterations = 500){
       # previous create_cdf_ends()
       # weib <- fitdistrplus::fitdist(observations, distr = "weibull",
       #                               method = "mle")
-      weib <- fitdistrplus::fitdist(data = observations, distr = "weibull", method = "mle", lower = 0, upper = Inf)
+      weib <- fitdistrplus::fitdist(data = observations, distr = "weibull", method = "mle")
       cdf0 <- as.numeric(weib$estimate['scale']*
                            (-log(1-0.01))^(1/weib$estimate['shape']))
       cdf100 <- as.numeric(weib$estimate['scale']*
